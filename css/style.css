@@ -1,0 +1,134 @@
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+/* INDEX */
+
+.fondoGeneral{
+    background-image: url(../img/fondo-general.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tituloIndex{
+    font-family: 'Righteous';
+    font-size: 80px;
+    color: white;
+    margin: 250px 50px 0px 80px;
+}
+
+.textoIndex{
+    font-family: 'Cabin', 'sans-serif';
+    font-size: 30px;
+    color: rgb(194, 192, 192);
+    margin: 0px 50px 0px 80px;
+
+}
+
+.subtituloIndex{
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* NAV INDEX */
+
+.navegadorIndex{
+    margin: 30px 75px 0px 105px;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px black;
+}
+
+.navegadorIndex form a{
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Cabin', 'sans-serif';
+    color: white;
+}
+
+/* PAGINA PRESUPUESTO */
+
+.fondoPaginas{
+    background-image: url(../img/fondo-paginas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cardsPresupuestos{
+    padding: 5px;
+    text-align: center;
+}
+
+.tituloPresupuesto{
+    font-family: 'Righteous';
+    font-size: 80px;
+    color: white;
+    text-align: center;
+}
+
+.textoPresupuesto{
+    font-family: 'Cabin', 'sans-serif';
+    font-size: 30px;
+    color: rgb(194, 192, 192);
+    text-align: center;
+}
+
+.subitulosPresupuestos{
+    font-family: 'Cabin', 'sans-serif';
+    font-size: 29px;
+    padding: 5px;
+    margin-bottom: 0px;
+}
+
+.subitutloNiveles{
+    color: rgb(194, 192, 192);
+}
+
+.list-group-item{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+svg{
+    color: green;
+}
+
+h3{
+    font-size: 18px;
+    font-family: 'Cabin', 'sans-serif';
+    text-align: center;
+    margin: 0px;
+    line-height: 28px;
+}
+
+.botonPresupuestos a{
+    text-decoration: none;
+    color: rgb(80, 74, 74);
+}
+
+.botonPresupuestos a:hover{
+    text-decoration: underline;
+    color: white;
+    background-color: black;
+}
+
+/* NAV PAGINAS */
+
+.navegadorPaginas ul{
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navegadorPaginas ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: 500;
+}
