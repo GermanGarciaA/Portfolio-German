@@ -68,7 +68,6 @@
     background-color: white;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 2px rgb(255, 255, 255);
-    /* padding: 3px; */
     margin: 0px 0px 1rem 0px;
 }
 
@@ -171,6 +170,29 @@ h3{
     color: white;
     background-color: black;
     font-family: 'Cabin', 'sans-serif';
+}
+
+.botonVolver2{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Cabin', 'sans-serif';
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px rgb(255, 255, 255);
+}
+
+.botonVolver2:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    font-family: 'Cabin', 'sans-serif';
+}
+
+.botonVolver1{
+    margin: 20px;
+}
+
+.botonVolver3{
+    margin-top: 20px;
 }
 
 /* NAV PAGINAS */
