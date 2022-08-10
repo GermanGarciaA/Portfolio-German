@@ -50,6 +50,26 @@
     color: white;
 }
 
+.navVertical{
+    margin-bottom: 140px;
+}
+
+/* SECCION SOBRE MI */
+
+.fondoPaginas{
+    background-color: black;
+}
+
+.cardSobreMi{
+    display: flex;
+    flex-direction: column;
+}
+
+.cardSobreMi h1{
+    text-align: center;
+    font-family: 'Cabin', 'sans-serif';
+}
+
 /* PAGINA PRESUPUESTO */
 
 .col-6{
@@ -58,10 +78,6 @@
 
 .row{
     width: 100%;
-}
-
-.fondoPaginas{
-    background-color: black;
 }
 
 .fondoBloque{
