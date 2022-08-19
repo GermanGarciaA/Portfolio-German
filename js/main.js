@@ -9,6 +9,8 @@ for (let i = 0; i < 3; i++) {
         alert('Respuesta correcta');
         break;
     } else{
-        alert('Te quedan ' + (2-i) + ' Intentos');
+        alert('Te quedan ' + (2-i) + ' intentos');
+    } if (i == 2) {
+        alert('Llegaste al maximo de respuestas incorrectas')   
     }
 }
