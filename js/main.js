@@ -35,10 +35,10 @@ peso();
 let alturaDelUsuario = 0;
 
 function altura() {
-    alturaDelUsuario = parseFloat(prompt('Ingrese su altura: \nAltura en metros, sin unidades, separado de decimales \nEJ: si mide 1.82metros, pondrá 1.82'));
+    alturaDelUsuario = parseFloat(prompt('Ingrese su altura: \nAltura en metros, sin unidades, separado de decimales \nEJ: si mide 1.82 metros, pondrá 1.82'));
     while ((isNaN(alturaDelUsuario))) {
         alert('El valor debe ser un número')
-        alturaDelUsuario = parseFloat(prompt('Ingrese su altura: \nAltura en metros, sin unidades, separado de decimales \nEJ: si mide 1.82metros, pondrá 1.82'));
+        alturaDelUsuario = parseFloat(prompt('Ingrese su altura: \nAltura en metros, sin unidades, separado de decimales \nEJ: si mide 1.82 metros, pondrá 1.82'));
     }
 }
 
