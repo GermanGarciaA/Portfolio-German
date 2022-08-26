@@ -56,28 +56,28 @@ function imcDelUsuario() {
     if (imc < 16) {
         alert('Bajo las indicaciones del IMC usted tiene: \nDELGADEZ SEVERA');
     }
-    else if(imc = 16 && imc < 16.99){
+    else if(imc == 16 || imc < 16.99){
         alert('Bajo las indicaciones del IMC usted tiene: \nDELGADEZ MODERADA');
     }
-    else if(imc = 17 && imc < 18.49){
+    else if(imc == 17 || imc < 18.49){
         alert('Bajo las indicaciones del IMC usted tiene: \nDELGADEZ ACEPTABLE');
     }
-    else if(imc = 18.5 && imc < 24.99){
+    else if(imc == 18.5 || imc < 24.99){
         alert('Bajo las indicaciones del IMC usted tiene: \nNORMOPESO');
     }
-    else if(imc = 25 && imc < 26.99){
+    else if(imc == 25 || imc < 26.99){
         alert('Bajo las indicaciones del IMC usted tiene: \nSOBREPESO GRADO 1');
     }
-    else if(imc = 27 && imc < 29.99){
+    else if(imc == 27 || imc < 29.99){
         alert('Bajo las indicaciones del IMC usted tiene: \nSOBREPESO GRADO 2');
     }
-    else if(imc = 30 && imc < 34.99){
+    else if(imc == 30 || imc < 34.99){
         alert('Bajo las indicaciones del IMC usted tiene: \nOBESIDAD TIPO 1');
     }
-    else if(imc = 35 && imc < 39.99){
+    else if(imc == 35 || imc < 39.99){
         alert('Bajo las indicaciones del IMC usted tiene: \nOBESIDAD TIPO 2');
     }
-    else if(imc = 40 && imc < 49.99){
+    else if(imc == 40 || imc < 49.99){
         alert('Bajo las indicaciones del IMC usted tiene: \nOBESIDAD DE TIPO (MORBIDA)');
     }
     else if(imc > 50){
