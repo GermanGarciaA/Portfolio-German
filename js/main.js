@@ -1,3 +1,13 @@
+// DESAFIO COMPLEMENTARIO DOM
+
+const h1 = document.getElementById('h1');
+h1.innerHTML = 'Curso de <br> JavaScript en <br> CoderHouse';
+
+const textoSubtitulo = document.getElementsByClassName('textoIndex');
+textoSubtitulo[0].innerText = 'Desafio complementario de DOM';
+
+const ul = document.getElementById('lista');
+
 // SIMULADOR DE INDICE DE MASA CORPORAL
 
 alert('Si usted quiere saber su IMC ha ingresado al lugar perfecto \nEn esta pagina calcularemos el IMC segun la formula Quetelet');
@@ -380,23 +390,23 @@ function grupoMuscularTriceps() {
         while (ejercicioTricep != 0) {
             ejercicioTricep = parseInt(prompt('Coloque el número del ejercicio que realizo y cuando quiera finalizar escriba el número 0. \n 1) Tríceps en polea \n 2) Trasnuca \n 3) Patada de burro \n 4) Fondo de tríceps 21 \n 5) Tríceps toma invertida'));
             
-            if (ejercicioTricep  === 1) {
+            if (ejercicioTricep === 1) {
                 cargaDeEjercicios(EjerciciosRealizados, TricepsEnPolea);
                 alert('Usted eligió el siguiente ejercicio:' + ' ' + TricepsEnPolea.nombre);
             }
-            else if (ejercicioTricep  === 2) {
+            else if (ejercicioTricep === 2) {
                 cargaDeEjercicios(EjerciciosRealizados, Trasnuca);
                 alert('Usted eligió el siguiente ejercicio:' + ' ' + Trasnuca.nombre);
             }
-            else if (ejercicioTricep  === 3) {
+            else if (ejercicioTricep === 3) {
                 cargaDeEjercicios(EjerciciosRealizados, PatadaDeBurro);
                 alert('Usted eligió el siguiente ejercicio:' + ' ' + PatadaDeBurro.nombre);
             }
-            else if (ejercicioTricep  === 4) {
+            else if (ejercicioTricep === 4) {
                 cargaDeEjercicios(EjerciciosRealizados, FondoDeTriceps);
                 alert('Usted eligió el siguiente ejercicio:' + ' ' + FondoDeTriceps.nombre);
             }
-            else if (ejercicioTricep  === 5) {
+            else if (ejercicioTricep === 5) {
                 cargaDeEjercicios(EjerciciosRealizados, TricepsTomaInvertida);
                 alert('Usted eligió el siguiente ejercicio:' + ' ' + TricepsTomaInvertida.nombre);
             }
@@ -412,8 +422,14 @@ console.log(EjerciciosRealizados);
 
 // ITERACION PARA QUE EL USUARIO SEPA CUANTOS Y QUE EJERCICIOS ELIGIO 
 
-for (const ejercicios of EjerciciosRealizados) {
-    console.log(ejercicios);
+for (const ejercicio of EjerciciosRealizados) {
+    let li = document.createElement('li');
+    li.innerHTML =`
+    <div class="cardsPresupuestos">
+    <p> Nombre de Ejercicio: ${ejercicio.nombre}</p>
+    <p> Grupo muscular: ${ejercicio.grupoMuscular}</p>
+    </div>`
+    ul.append(li);
 }
 
 // FILTRO PARA BUSCAR EL GRUPO MUSCULAR DE ALGUNOS DE LOS EJERCICIOS ELEGIDOS
@@ -429,3 +445,4 @@ function buscarPorNombre(arr, ejercicio){
 
 const encontrado = buscarPorNombre(EjerciciosRealizados, busquedaEjercicioRealizado);
 alert('El ejercicio que selecciono ' + encontrado.nombre + ' pertenece al grupo muscular: ' + encontrado.grupoMuscular);
+
