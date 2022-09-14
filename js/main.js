@@ -10,7 +10,13 @@ btnUsuario.addEventListener('click', (e)=>{
 
     const ingresoNombreYApellido = () =>{
         if ((nombreIngresado === '' || (!isNaN(nombreIngresado || apellidoIngresado))) || apellidoIngresado === '') {
-            alert('Ingrese correctamente su nombre y apellido');
+            const divIngreso = document.createElement('div');
+            divIngreso.innerHTML = `
+            <div class= "contenedorIngreso">
+            <h2>Ingrese correctamente su nombre y apellido</h2>
+            </div>
+            `
+            resultadoIngresoUsuario.append(divIngreso);
         }
         else {
             const divIngreso = document.createElement('div');
@@ -545,10 +551,10 @@ btnHombros5.addEventListener('click', () =>{
 // EJERCICIOS BICEPS
 
 const btnBiceps1 = document.querySelector('#btnBiceps1');
-const btnBiceps3 = document.querySelector('#btnBiceps2');
-const btnBiceps4 = document.querySelector('#btnBiceps3');
-const btnBiceps5 = document.querySelector('#btnBiceps4');
-const btnBiceps6 = document.querySelector('#btnBiceps5');
+const btnBiceps2 = document.querySelector('#btnBiceps2');
+const btnBiceps3 = document.querySelector('#btnBiceps3');
+const btnBiceps4 = document.querySelector('#btnBiceps4');
+const btnBiceps5 = document.querySelector('#btnBiceps5');
 
 btnBiceps1.addEventListener('click', () =>{
     cargaDeEjercicios(EjerciciosRealizados, CurlDeBiceps);
@@ -707,3 +713,52 @@ btnTriceps5.addEventListener('click', () =>{
         `
         resultadoEjerciciosRealizados.append(divTriceps5);
 });
+
+// ITERACION PARA QUE EL USUARIO SEPA CUANTOS Y QUE EJERCICIOS ELIGIO 
+
+for (const ejercicio of EjerciciosRealizados) {
+    ejercicio.nombre;
+    ejercicio.grupoMuscular;
+    console.log(EjerciciosRealizados);
+}
+
+// FILTRO PARA BUSCAR EL GRUPO MUSCULAR DE ALGUNOS DE LOS EJERCICIOS ELEGIDOS
+
+const btnBuscador = document.querySelector('#btnBuscador');
+const resultadoBuscador = document.querySelector('.resultadoBuscador');
+
+btnBuscador.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const ejercicioIngresado = document.querySelector('#buscador').value;
+
+    const buscadorDeEjercicios = () =>{
+        if ((ejercicioIngresado === '' || (!isNaN(ejercicioIngresado)))) {
+            const divBuscador1 = document.createElement('div');
+            divBuscador1.innerHTML = `
+            <div class= "contenedorIngreso">
+            <h2>Ingrese un ejercicio valido</h2>
+            </div>
+            `
+            resultadoBuscador.append(divBuscador1);
+        }
+        else {
+            function buscarPorNombre(arr, ejercicio){
+                let encontrado = arr.find((el) => {
+                    return el.nombre == ejercicio;
+                });
+                return encontrado;
+            }
+            const encontrado = buscarPorNombre(EjerciciosRealizados, ejercicioIngresado);
+
+            const divBuscador2 = document.createElement('div');
+            divBuscador2.innerHTML = `
+            <div class= "contenedorIngreso">
+            <h2>${encontrado.nombre} pertenece al grupo muscular ${encontrado.grupoMuscular}</h2>
+            </div>
+            `
+            resultadoBuscador.append(divBuscador2);
+        }
+    }
+    buscadorDeEjercicios();
+});
+
