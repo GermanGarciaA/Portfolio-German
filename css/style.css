@@ -14,23 +14,18 @@
 
 .tituloIndex{
     font-family: 'Righteous';
-    font-size: 80px;
+    font-size: 60px;
     color: white;
-    margin: 250px 50px 0px 80px;
+    text-align: center;
 }
 
 .textoIndex{
     font-family: 'Cabin', 'sans-serif';
     font-size: 30px;
-    color: rgb(194, 192, 192);
-    margin: 0px 50px 0px 80px;
-
-}
-
-.subtituloIndex{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-style: italic;
     font-weight: bold;
+    text-align: center;
 }
 
 #lista{
@@ -41,26 +36,6 @@
     margin: 0px 50px 0px 80px;
 }
 
-/* NAV INDEX */
-
-.navegadorIndex{
-    margin: 30px 75px 0px 105px;
-    width: 30%;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px 2px black;
-}
-
-.navegadorIndex form a{
-    margin: 5px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-family: 'Cabin', 'sans-serif';
-    color: white;
-}
-
-.navVertical{
-    margin-bottom: 140px;
-}
 
 /* SECCION SOBRE MI */
 
@@ -68,25 +43,7 @@
     background-color: black;
 }
 
-.cardSobreMi{
-    display: flex;
-    flex-direction: column;
-}
-
-.cardSobreMi h1{
-    text-align: center;
-    font-family: 'Cabin', 'sans-serif';
-}
-
 /* PAGINA PRESUPUESTO */
-
-.col-6{
-    width: 100%;
-}
-
-.row{
-    width: 100%;
-}
 
 .fondoBloque{
     background-color: white;
@@ -112,6 +69,7 @@
     font-size: 29px;
     padding: 5px;
     margin-bottom: 0px;
+    color: black;
 }
 
 .subitutloNiveles{
@@ -123,7 +81,7 @@
 .textoPresupuesto{
     font-family: 'Cabin', 'sans-serif';
     font-size: 30px;
-    color: rgb(194, 192, 192);
+    color: rgb(0, 0, 0);
     text-align: center;
 }
 
@@ -134,7 +92,7 @@
 }
 
 .tituloExplicativo{
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'Cabin', 'sans-serif';
     font-size: 23px;
     text-decoration: underline;
@@ -167,70 +125,60 @@
     list-style: none;
 }
 
-.svgCheck{
-    color: green;
+/* CLASES PARA JS */
+
+.containerTitulos{
+    font-size: 35px;
+    text-align: center;
+    color: white;
 }
 
-.svgCruz{
-    color: red;
+.containerSectionDiv{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row; 
+}
+
+.fondoFormulario{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 40px;
+    border: solid 3px #db4848;
+    box-shadow: 0px 0px 5px 10px rgb(255, 255, 255);
+    margin: 30px;
+}
+
+h2{
+    font-family: "Staatliches" "cursive";
+    text-align: center;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
 }
 
 h3{
-    font-size: 18px;
-    font-family: 'Cabin', 'sans-serif';
+    font-family: "Staatliches" "cursive";
     text-align: center;
-    margin: 0px;
-    line-height: 28px;
+    font-size: 30px;
+    color: rgb(255, 255, 255); 
 }
 
-.botonPresupuestos{
-    text-decoration: none;
-    color: rgb(80, 74, 74);
-    font-family: 'Cabin', 'sans-serif';
+h4{
+    font-family: "Staatliches" "cursive";
+    text-align: center;
+    font-size: 15px;
+    color: rgb(0, 0, 0); 
 }
 
-.botonPresupuestos:hover{
-    text-decoration: underline;
-    color: white;
-    background-color: black;
-    font-family: 'Cabin', 'sans-serif';
-}
-
-.botonVolver2{
+.datosFormulario{
     font-size: 20px;
     color: white;
-    text-decoration: none;
-    font-family: 'Cabin', 'sans-serif';
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px 2px rgb(255, 255, 255);
+    margin: 7px;
 }
 
-.botonVolver2:hover{
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    font-family: 'Cabin', 'sans-serif';
-}
-
-.botonVolver1{
-    margin: 20px;
-}
-
-.botonVolver3{
-    margin-top: 20px;
-}
-
-/* NAV PAGINAS */
-
-.navegadorPaginas ul{
-    padding: 5px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.navegadorPaginas ul li a{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 25px;
-    font-weight: 500;
+.contenedorIngreso{
+    border: solid 3px #db4848;
+    box-shadow: 0px 0px 5px 10px rgb(255, 255, 255);
+    margin: 5px;    
 }

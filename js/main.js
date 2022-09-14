@@ -1,104 +1,158 @@
-// DESAFIO COMPLEMENTARIO DOM
+// INGRESO USUARIO
 
-const h1 = document.getElementById('h1');
-h1.innerHTML = 'Curso de <br> JavaScript en <br> CoderHouse';
+const btnUsuario = document.querySelector('#btnUsuario');
+const resultadoIngresoUsuario = document.querySelector('.resultadoIngresoUsuario');
 
-const textoSubtitulo = document.getElementsByClassName('textoIndex');
-textoSubtitulo[0].innerText = 'Desafio complementario de DOM';
+btnUsuario.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const nombreIngresado = document.querySelector('#nombre').value;
+    const apellidoIngresado = document.querySelector('#apellido').value;
 
-const ul = document.getElementById('lista');
+    const ingresoNombreYApellido = () =>{
+        if ((nombreIngresado === '' || (!isNaN(nombreIngresado || apellidoIngresado))) || apellidoIngresado === '') {
+            alert('Ingrese correctamente su nombre y apellido');
+        }
+        else {
+            const divIngreso = document.createElement('div');
+            divIngreso.innerHTML = `
+            <div class= "contenedorIngreso">
+            <h2>${nombreIngresado} ${apellidoIngresado} ha ingresado correctamente</h2>
+            </div>
+            `
+            resultadoIngresoUsuario.append(divIngreso);
+        }
+    }
+    ingresoNombreYApellido();
+});
 
 // SIMULADOR DE INDICE DE MASA CORPORAL
 
-alert('Si usted quiere saber su IMC ha ingresado al lugar perfecto \nEn esta pagina calcularemos el IMC segun la formula Quetelet');
-
-function ingresoDeUsuario() {
-    let nombre = prompt('Ingrese su nombre');
-    while ((!isNaN(nombre))) {
-        alert('Error: ingrese un nombre valido');
-        nombre = prompt('Ingrese su nombre');
-    }
-    
-    let apellido = prompt('Ingrese su apellido');
-    while ((!isNaN(apellido))) {
-        alert('Error: ingrese un apellido valido');
-        apellido = prompt('Ingrese su apellido');
-    }
-
-    alert('Bienvenido/a ' + nombre + ' ' + apellido);
-}
-
-ingresoDeUsuario()
-
-let pesoDelUsuario = 0;
-
-function peso() {
-    pesoDelUsuario = parseFloat(prompt('Ingrese su peso: \nEn kilogramos, sin unidades, seperado de decimales \nEJ: si pesa 81.5, pondrá 81.5'));
-    while ((isNaN(pesoDelUsuario))) {
-        alert('El valor debe ser un número');
-        pesoDelUsuario = parseFloat(prompt('Ingrese su peso: \nEn kilogramos, sin unidades, seperado de decimales \nEJ: si pesa 81.5, pondrá 81.5'));
-    }
-}
-
-peso();
-
-let alturaDelUsuario = 0;
-
-function altura() {
-    alturaDelUsuario = parseFloat(prompt('Ingrese su altura: \nAltura en metros, sin unidades, separado de decimales \nEJ: si mide 1.82 metros, pondrá 1.82'));
-    while ((isNaN(alturaDelUsuario))) {
-        alert('El valor debe ser un número');
-        alturaDelUsuario = parseFloat(prompt('Ingrese su altura: \nAltura en metros, sin unidades, separado de decimales \nEJ: si mide 1.82 metros, pondrá 1.82'));
-    }
-}
-
-altura();
-
-alert('Su peso es de ' + pesoDelUsuario + ' kg' + '\nSu altura es de ' + alturaDelUsuario + ' metros');
+const btnIMC = document.querySelector('#btnIMC');
+const resultadoIMC = document.querySelector('.resultadoIMC');
+const clasificacionesIMC = document.querySelector('.clasificacionesIMC');
 
 let imc = 0;
 
-function imcDelUsuario() {
-    imc = pesoDelUsuario / (alturaDelUsuario*alturaDelUsuario);
+btnIMC.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const pesoIngresado = document.querySelector('#peso').value;
+    const alturaIngresada = document.querySelector('#altura').value;
 
-    alert('Su Indice de masa corporal es de: ' + Math.round(imc));
+    const ingresoPesoYAltura = () =>{
+        imc = pesoIngresado / (alturaIngresada*alturaIngresada);
+        const divIMC = document.createElement('div');
+            divIMC.innerHTML = `
+            <div class= "contenedorIngreso">
+            <h2>Su IMC es de ${Math.round(imc)}</h2>
+            </div>
+            `
+            resultadoIMC.append(divIMC);
+    }
+    ingresoPesoYAltura();
 
-    if (imc < 16) {
-        alert('Bajo las indicaciones del IMC usted tiene: \nDELGADEZ SEVERA');
+    const clasificacionIMC = () =>{
+        if (imc < 16) {
+            const divClasificacionIMC = document.createElement('div');
+            divClasificacionIMC.innerHTML =`
+            <div class= "contenedorIngreso">
+            <h2>Bajo las indicaciones del IMC usted tiene: DELGADEZ SEVERA</h2>
+            </div>
+            `
+            clasificacionesIMC.append(divClasificacionIMC);
+        }
+        else if(imc == 16 || imc < 16.99){
+            const divClasificacionIMC = document.createElement('div');
+            divClasificacionIMC.innerHTML =`
+            <div class= "contenedorIngreso">
+            <h2>Bajo las indicaciones del IMC usted tiene: DELGADEZ MODERADA</h2>
+            </div>
+            `
+            clasificacionesIMC.append(divClasificacionIMC);
+        }
+        else if(imc == 17 || imc < 18.49){
+            const divClasificacionIMC = document.createElement('div');
+            divClasificacionIMC.innerHTML =`
+            <div class= "contenedorIngreso">
+            <h2>Bajo las indicaciones del IMC usted tiene: DELGADEZ ACEPTABLE</h2>
+            </div>
+            `
+            clasificacionesIMC.append(divClasificacionIMC);
+        }
+        else if(imc == 18.5 || imc < 24.99){
+            const divClasificacionIMC = document.createElement('div');
+            divClasificacionIMC.innerHTML =`
+            <div class= "contenedorIngreso">
+            <h2>Bajo las indicaciones del IMC usted tiene: NORMOPESO</h2>
+            </div>
+            `
+            clasificacionesIMC.append(divClasificacionIMC);
+        }
+        else if(imc == 25 || imc < 26.99){
+            const divClasificacionIMC = document.createElement('div');
+            divClasificacionIMC.innerHTML =`
+            <div class= "contenedorIngreso">
+            <h2>Bajo las indicaciones del IMC usted tiene: SOBREPESO GRADO 1</h2>
+            </div>
+            `
+            clasificacionesIMC.append(divClasificacionIMC);
+        }
+        else if(imc == 27 || imc < 29.99){
+            const divClasificacionIMC = document.createElement('div');
+            divClasificacionIMC.innerHTML =`
+            <div class= "contenedorIngreso">
+            <h2>Bajo las indicaciones del IMC usted tiene: SOBREPESO GRADO 2</h2>
+            </div>
+            `
+            clasificacionesIMC.append(divClasificacionIMC);
+        }
+        else if(imc == 30 || imc < 34.99){
+            const divClasificacionIMC = document.createElement('div');
+            divClasificacionIMC.innerHTML =`
+            <div class= "contenedorIngreso">
+            <h2>Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 1</h2>
+            </div>
+            `
+            clasificacionesIMC.append(divClasificacionIMC);
+        }
+        else if(imc == 35 || imc < 39.99){
+            const divClasificacionIMC = document.createElement('div');
+            divClasificacionIMC.innerHTML =`
+            <div class= "contenedorIngreso">
+            <h2>Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 2</h2>
+            </div>
+            `
+            clasificacionesIMC.append(divClasificacionIMC);
+        }
+        else if(imc == 40 || imc < 49.99){
+            const divClasificacionIMC = document.createElement('div');
+            divClasificacionIMC.innerHTML =`
+            <div class= "contenedorIngreso">
+            <h2>Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 3 (MORBIDA)</h2>
+            </div>
+            `
+            clasificacionesIMC.append(divClasificacionIMC);
+        }
+        else if(imc > 50){
+            const divClasificacionIMC = document.createElement('div');
+            divClasificacionIMC.innerHTML =`
+            <div class= "contenedorIngreso">
+            <h2>Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 4 (EXTREMA)</h2>
+            </div>
+            `
+            clasificacionesIMC.append(divClasificacionIMC);
+        }
+        else{
+            const divClasificacionIMC = document.createElement('div');
+            divClasificacionIMC.innerHTML =`
+            <div class= "contenedorIngreso">
+            <h2>Los valores no corresponden a la tabla de IMC</h2>
+            </div>
+            `
+            clasificacionesIMC.append(divClasificacionIMC);
+        }
     }
-    else if(imc == 16 || imc < 16.99){
-        alert('Bajo las indicaciones del IMC usted tiene: \nDELGADEZ MODERADA');
-    }
-    else if(imc == 17 || imc < 18.49){
-        alert('Bajo las indicaciones del IMC usted tiene: \nDELGADEZ ACEPTABLE');
-    }
-    else if(imc == 18.5 || imc < 24.99){
-        alert('Bajo las indicaciones del IMC usted tiene: \nNORMOPESO');
-    }
-    else if(imc == 25 || imc < 26.99){
-        alert('Bajo las indicaciones del IMC usted tiene: \nSOBREPESO GRADO 1');
-    }
-    else if(imc == 27 || imc < 29.99){
-        alert('Bajo las indicaciones del IMC usted tiene: \nSOBREPESO GRADO 2');
-    }
-    else if(imc == 30 || imc < 34.99){
-        alert('Bajo las indicaciones del IMC usted tiene: \nOBESIDAD TIPO 1');
-    }
-    else if(imc == 35 || imc < 39.99){
-        alert('Bajo las indicaciones del IMC usted tiene: \nOBESIDAD TIPO 2');
-    }
-    else if(imc == 40 || imc < 49.99){
-        alert('Bajo las indicaciones del IMC usted tiene: \nOBESIDAD DE TIPO (MORBIDA)');
-    }
-    else if(imc > 50){
-        alert('Bajo las indicaciones del IMC usted tiene: \nOBESIDAD TIPO 4 (EXTREMA)');
-    }
-    else{
-        alert('Los valores no corresponden a la tabla de IMC');
-    }
-}
-
-imcDelUsuario();
+    clasificacionIMC();
+});
 
 // LISTA DE EJERCICIOS REALIZADOS EN UNA SESION DE ENTRENAMIENTO
 
@@ -147,302 +201,509 @@ const TricepsEnPolea = new CaracteristicasEjercicio('Tríceps en polea','Triceps
 const Trasnuca = new CaracteristicasEjercicio('Trasnuca', 'Triceps');
 const PatadaDeBurro = new CaracteristicasEjercicio('Patada de burro', 'Triceps');
 const FondoDeTriceps = new CaracteristicasEjercicio('Fondo de tríceps', 'Triceps');
-const TricepsTomaInvertida = new CaracteristicasEjercicio('Tríceps toma invvertida', 'Triceps');
+const TricepsTomaInvertida = new CaracteristicasEjercicio('Tríceps toma invertida', 'Triceps');
 
 const EjerciciosRealizados = [];
 
 function cargaDeEjercicios(arr, ejercicio) {
     arr.push(ejercicio);
 }
-
-function grupoMuscular(){
-    let entrenamientoUsuario;
-    do{
-        entrenamientoUsuario = parseInt(prompt('Eliga el grupo muscular que trabajó en el gimnasio: \n1) Pectorales \n2) Espalda \n3) Piernas \n4) Hombros \n5) Bíceps \n6) Tríceps'));
-    }while(entrenamientoUsuario != 1 && entrenamientoUsuario != 2 && entrenamientoUsuario != 3 && entrenamientoUsuario != 4 && entrenamientoUsuario != 5 && entrenamientoUsuario !=6);
-    
-    switch (entrenamientoUsuario){
-        case 1:
-            return 'Pectorales';
-        case 2:
-            return 'Espalda';
-        case 3:
-            return 'Piernas';
-        case 4:
-            return 'Hombros';
-        case 5:
-            return 'Bíceps';     
-        case 6:
-            return 'Tríceps';
-    }
-}
-
-let miEntrenamiento = grupoMuscular();
+const resultadoEjerciciosRealizados = document.querySelector('.resultadoEjerciciosRealizados');
 
 // EJERCICIOS PECTORALES
 
-let ejercicioPectoral = true;
+const btnPectoral1 = document.querySelector('#btnPectoral1');
+const btnPectoral2 = document.querySelector('#btnPectoral2');
+const btnPectoral3 = document.querySelector('#btnPectoral3');
+const btnPectoral4 = document.querySelector('#btnPectoral4');
+const btnPectoral5 = document.querySelector('#btnPectoral5');
 
-function grupoMuscularPectorales() {
-    if (miEntrenamiento === 'Pectorales'){
-        alert('Eligio el grupo muscular PECTORALES');
-
-        while (ejercicioPectoral != 0) {
-            ejercicioPectoral = parseInt(prompt('Coloque el número del ejercicio que realizo y cuando quiera finalizar escriba el número 0. \n 1) Press de pecho con barra \n 2) Aperturas de pecho con mancuernas \n 3) Flexiones de brazo \n 4) Press de pecho en máquina \n 5) Peck Deck'));
-            
-            if (ejercicioPectoral === 1) {
-                cargaDeEjercicios(EjerciciosRealizados, PressDePechoConBarra);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + PressDePechoConBarra.nombre);
-            }
-            else if (ejercicioPectoral === 2) {
-                cargaDeEjercicios(EjerciciosRealizados, AperturasDePechoConMancuernas);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + AperturasDePechoConMancuernas.nombre);
-            }
-            else if (ejercicioPectoral === 3) {
-                cargaDeEjercicios(EjerciciosRealizados, FlexionesDeBrazo);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + FlexionesDeBrazo.nombre);
-            }
-            else if (ejercicioPectoral === 4) {
-                cargaDeEjercicios(EjerciciosRealizados, PressDePechoEnMaquina);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + PressDePechoEnMaquina.nombre);
-            }
-            else if (ejercicioPectoral === 5) {
-                cargaDeEjercicios(EjerciciosRealizados, PeckDeck);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + PeckDeck.nombre);
-            }
-            else {
-                alert('Finalizó la carga de ejercicios de PECTORALES');
-            }
-        }
-    }
-}
-
-let ejerciciosPectorales = grupoMuscularPectorales();
-
-// EJERCICIOS ESPALDA
-
-let ejercicioEspalda = true;
+btnPectoral1.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, PressDePechoConBarra);
     
-function grupoMuscularEspalda() {
-    if (miEntrenamiento === 'Espalda'){
-        alert('Eligio el grupo muscular ESPALDA');
+    const divPectoral1 = document.createElement('div');
+        divPectoral1.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${PressDePechoConBarra.nombre}</h4>
+            <h4>${PressDePechoConBarra.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divPectoral1);
+});
 
-        while (ejercicioEspalda != 0) {
-            ejercicioEspalda = parseInt(prompt('Coloque el número del ejercicio que realizo y cuando quiera finalizar escriba el número 0. \n 1) Tracción dorsal \n 2) Remo bajo en máquina \n 3) Serrucho \n 4) Dorsalera Dividida \n 5) Remo alto en máquina'));
-            
-            if (ejercicioEspalda === 1) {
-                cargaDeEjercicios(EjerciciosRealizados, TraccionDorsal);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + TraccionDorsal.nombre);
-            }
-            else if (ejercicioEspalda === 2) {
-                cargaDeEjercicios(EjerciciosRealizados, RemoBajoEnMaquina);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + RemoBajoEnMaquina.nombre);
-            }
-            else if (ejercicioEspalda === 3) {
-                cargaDeEjercicios(EjerciciosRealizados, Serrucho);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + Serrucho.nombre);
-            }
-            else if (ejercicioEspalda === 4) {
-                cargaDeEjercicios(EjerciciosRealizados, DorsaleraDividida);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + DorsaleraDividida.nombre);
-            }
-            else if (ejercicioEspalda === 5) {
-                cargaDeEjercicios(EjerciciosRealizados, RemoAltoEnMaquina);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + RemoAltoEnMaquina.nombre);
-            }
-            else {
-                alert('Finalizó la carga de ejercicios de ESPALDA');
-            }
-        }
-    }
-}
+btnPectoral2.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, AperturasDePechoConMancuernas);
     
-let ejerciciosEspalda = grupoMuscularEspalda();
+    const divPectoral2 = document.createElement('div');
+        divPectoral2.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${AperturasDePechoConMancuernas.nombre}</h4>
+            <h4>${AperturasDePechoConMancuernas.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divPectoral2);
+});
+
+btnPectoral3.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, FlexionesDeBrazo);
+    
+    const divPectoral3 = document.createElement('div');
+        divPectoral3.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${FlexionesDeBrazo.nombre}</h4>
+            <h4>${FlexionesDeBrazo.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divPectoral3);
+});
+
+btnPectoral4.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, PressDePechoEnMaquina);
+    
+    const divPectoral4 = document.createElement('div');
+        divPectoral4.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${PressDePechoEnMaquina.nombre}</h4>
+            <h4>${PressDePechoEnMaquina.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divPectoral4);
+});
+
+btnPectoral5.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, PeckDeck);
+
+        const divPectoral5 = document.createElement('div');
+        divPectoral5.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${PeckDeck.nombre}</h4>
+            <h4>${PeckDeck.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divPectoral5);
+});
+
+// EJERCICIOS EPALDA
+
+const btnEspalda1 = document.querySelector('#btnEspalda1');
+const btnEspalda2 = document.querySelector('#btnEspalda2');
+const btnEspalda3 = document.querySelector('#btnEspalda3');
+const btnEspalda4 = document.querySelector('#btnEspalda4');
+const btnEspalda5 = document.querySelector('#btnEspalda5');
+
+btnEspalda1.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, TraccionDorsal);
+
+        const divEspalda1 = document.createElement('div');
+        divEspalda1.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${TraccionDorsal.nombre}</h4>
+            <h4>${TraccionDorsal.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divEspalda1);
+});
+
+btnEspalda2.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, RemoBajoEnMaquina);
+
+        const divEspalda2 = document.createElement('div');
+        divEspalda2.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${RemoBajoEnMaquina.nombre}</h4>
+            <h4>${RemoBajoEnMaquina.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divEspalda2);
+});
+
+btnEspalda3.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, Serrucho);
+
+        const divEspalda3 = document.createElement('div');
+        divEspalda3.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${Serrucho.nombre}</h4>
+            <h4>${Serrucho.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divEspalda3);
+});
+
+btnEspalda4.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, DorsaleraDividida);
+
+        const divEspalda4 = document.createElement('div');
+        divEspalda4.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${DorsaleraDividida.nombre}</h4>
+            <h4>${DorsaleraDividida.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divEspalda4);
+});
+
+btnEspalda5.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, RemoAltoEnMaquina);
+
+        const divEspalda5 = document.createElement('div');
+        divEspalda5.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${RemoAltoEnMaquina.nombre}</h4>
+            <h4>${RemoAltoEnMaquina.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divEspalda5);
+});
 
 // EJERCICIOS PIERNAS
 
-let ejercicioPiernas = true;
-    
-function grupoMuscularPiernas() {
-    if (miEntrenamiento === 'Piernas'){
-        alert('Eligio el grupo muscular PIERNAS');
+const btnPiernas1 = document.querySelector('#btnPiernas1');
+const btnPiernas2 = document.querySelector('#btnPiernas2');
+const btnPiernas3 = document.querySelector('#btnPiernas3');
+const btnPiernas4 = document.querySelector('#btnPiernas4');
+const btnPiernas5 = document.querySelector('#btnPiernas5');
 
-        while (ejercicioPiernas != 0) {
-            ejercicioPiernas = parseInt(prompt('Coloque el número del ejercicio que realizo y cuando quiera finalizar escriba el número 0. \n 1) Sillón de cuádriceps \n 2) Camilla de isquiotibiales \n 3) Gemelos \n 4) Aductores \n 5) Abeductores'));
-            
-            if (ejercicioPiernas === 1) {
-                cargaDeEjercicios(EjerciciosRealizados, SillonDeCuadriceps);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + SillonDeCuadriceps.nombre);
-            }
-            else if (ejercicioPiernas === 2) {
-                cargaDeEjercicios(EjerciciosRealizados, CamillaDeIsquiotibiales);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + CamillaDeIsquiotibiales.nombre);
-            }
-            else if (ejercicioPiernas === 3) {
-                cargaDeEjercicios(EjerciciosRealizados, Gemelos);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + Gemelos.nombre);
-            }
-            else if (ejercicioPiernas === 4) {
-                cargaDeEjercicios(EjerciciosRealizados, Aductores);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + Aductores.nombre);
-            }
-            else if (ejercicioPiernas === 5) {
-                cargaDeEjercicios(EjerciciosRealizados, Abeductores);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + Abeductores.nombre);
-            }
-            else {
-                alert('Finalizó la carga de ejercicios de PIERNAS');
-            }
-        }
-    }
-}
-    
-let ejerciciosPiernas = grupoMuscularPiernas();
+btnPiernas1.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, SillonDeCuadriceps);
+
+        const divPiernas1 = document.createElement('div');
+        divPiernas1.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${SillonDeCuadriceps.nombre}</h4>
+            <h4>${SillonDeCuadriceps.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divPiernas1);
+});
+
+btnPiernas2.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, CamillaDeIsquiotibiales);
+
+        const divPiernas2 = document.createElement('div');
+        divPiernas2.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${CamillaDeIsquiotibiales.nombre}</h4>
+            <h4>${CamillaDeIsquiotibiales.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divPiernas2);
+});
+
+btnPiernas3.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, Gemelos);
+
+        const divPiernas3 = document.createElement('div');
+        divPiernas3.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${Gemelos.nombre}</h4>
+            <h4>${Gemelos.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divPiernas3);
+});
+
+btnPiernas4.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, Aductores);
+
+        const divPiernas4 = document.createElement('div');
+        divPiernas4.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${Aductores.nombre}</h4>
+            <h4>${Aductores.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divPiernas4);
+});
+
+btnPiernas5.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, Abeductores);
+
+        const divPiernas5 = document.createElement('div');
+        divPiernas5.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${Abeductores.nombre}</h4>
+            <h4>${Abeductores.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divPiernas5);
+});
 
 // EJERCICIOS HOMBROS
 
-let ejercicioHombros = true;
-    
-function grupoMuscularHombros() {
-    if (miEntrenamiento === 'Hombros'){
-        alert('Eligio el grupo muscular HOMBROS');
+const btnHombros1 = document.querySelector('#btnHombros1');
+const btnHombros2 = document.querySelector('#btnHombros2');
+const btnHombros3 = document.querySelector('#btnHombros3');
+const btnHombros4 = document.querySelector('#btnHombros4');
+const btnHombros5 = document.querySelector('#btnHombros5');
 
-        while (ejercicioHombros != 0) {
-            ejercicioHombros = parseInt(prompt('Coloque el número del ejercicio que realizo y cuando quiera finalizar escriba el número 0. \n 1) Press de hombros \n 2) Press arnold \n 3) Vuelos frontales \n 4) Jalones al mentón \n 5) Vuelos laterales'));
-            
-            if (ejercicioHombros === 1) {
-                cargaDeEjercicios(EjerciciosRealizados, PressDeHombros);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + PressDeHombros.nombre);
-            }
-            else if (ejercicioHombros === 2) {
-                cargaDeEjercicios(EjerciciosRealizados, PressArnold);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + PressArnold.nombre);
-            }
-            else if (ejercicioHombros === 3) {
-                cargaDeEjercicios(EjerciciosRealizados, VuelosFrontales);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + VuelosFrontales.nombre);
-            }
-            else if (ejercicioHombros === 4) {
-                cargaDeEjercicios(EjerciciosRealizados, JalonesAlMenton);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + JalonesAlMenton.nombre);
-            }
-            else if (ejercicioHombros === 5) {
-                cargaDeEjercicios(EjerciciosRealizados, VuelosLaterales);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + VuelosLaterales.nombre);
-            }
-            else {
-                alert('Finalizó la carga de ejercicios de HOMBROS');
-            }
-        }
-    }
-}
-    
-let ejerciciosHombros = grupoMuscularHombros();
+btnHombros1.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, PressDeHombros);
+
+        const divHombros1 = document.createElement('div');
+        divHombros1.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${PressDeHombros.nombre}</h4>
+            <h4>${PressDeHombros.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divHombros1);
+});
+
+btnHombros2.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, PressArnold);
+
+        const divHombros2 = document.createElement('div');
+        divHombros2.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${PressArnold.nombre}</h4>
+            <h4>${PressArnold.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divHombros2);
+});
+
+btnHombros3.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, VuelosFrontales);
+
+        const divHombros3 = document.createElement('div');
+        divHombros3.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${VuelosFrontales.nombre}</h4>
+            <h4>${VuelosFrontales.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divHombros3);
+});
+
+btnHombros4.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, JalonesAlMenton);
+
+        const divHombros4 = document.createElement('div');
+        divHombros4.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${JalonesAlMenton.nombre}</h4>
+            <h4>${JalonesAlMenton.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divHombros4);
+});
+
+btnHombros5.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, VuelosLaterales);
+
+        const divHombros5 = document.createElement('div');
+        divHombros5.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${VuelosLaterales.nombre}</h4>
+            <h4>${VuelosLaterales.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divHombros5);
+});
 
 // EJERCICIOS BICEPS
 
-let ejercicioBicep = true;
-    
-function grupoMuscularBiceps() {
-    if (miEntrenamiento === 'Bíceps'){
-        alert('Eligio el grupo muscular BÍCEPS');
+const btnBiceps1 = document.querySelector('#btnBiceps1');
+const btnBiceps3 = document.querySelector('#btnBiceps2');
+const btnBiceps4 = document.querySelector('#btnBiceps3');
+const btnBiceps5 = document.querySelector('#btnBiceps4');
+const btnBiceps6 = document.querySelector('#btnBiceps5');
 
-        while (ejercicioBicep != 0) {
-            ejercicioBicep = parseInt(prompt('Coloque el número del ejercicio que realizo y cuando quiera finalizar escriba el número 0. \n 1) Curl de Bíceps \n 2) Bíceps con barra \n 3) Bíceps en polea baja \n 4) Biceps 21 \n 5) Bíceps concentrado'));
-            
-            if (ejercicioBicep === 1) {
-                cargaDeEjercicios(EjerciciosRealizados, CurlDeBiceps);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + CurlDeBiceps.nombre);
-            }
-            else if (ejercicioBicep === 2) {
-                cargaDeEjercicios(EjerciciosRealizados, BicepsConBarra);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + BicepsConBarra.nombre);
-            }
-            else if (ejercicioBicep === 3) {
-                cargaDeEjercicios(EjerciciosRealizados, BicepsEnPoleaBaja);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + BicepsEnPoleaBaja.nombre);
-            }
-            else if (ejercicioBicep === 4) {
-                cargaDeEjercicios(EjerciciosRealizados, Biceps21);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + Biceps21.nombre);
-            }
-            else if (ejercicioBicep === 5) {
-                cargaDeEjercicios(EjerciciosRealizados, BicepsConcentrado);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + BicepsConcentrado.nombre);
-            }
-            else {
-                alert('Finalizó la carga de ejercicios de BÍCEPS');
-            }
-        }
-    }
-}
-    
-let ejerciciosBiceps = grupoMuscularBiceps();
+btnBiceps1.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, CurlDeBiceps);
+
+        const divBiceps1= document.createElement('div');
+        divBiceps1.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${CurlDeBiceps.nombre}</h4>
+            <h4>${CurlDeBiceps.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divBiceps1);
+});
+
+btnBiceps2.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, BicepsConBarra);
+
+        const divBiceps2= document.createElement('div');
+        divBiceps2.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${BicepsConBarra.nombre}</h4>
+            <h4>${BicepsConBarra.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divBiceps2);
+});
+
+btnBiceps3.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, BicepsEnPoleaBaja);
+
+        const divBiceps3= document.createElement('div');
+        divBiceps3.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${BicepsEnPoleaBaja.nombre}</h4>
+            <h4>${BicepsEnPoleaBaja.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divBiceps3);
+});
+
+btnBiceps4.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, Biceps21);
+
+        const divBiceps4= document.createElement('div');
+        divBiceps4.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${Biceps21.nombre}</h4>
+            <h4>${Biceps21.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divBiceps4);
+});
+
+btnBiceps5.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, BicepsConcentrado);
+
+        const divBiceps5= document.createElement('div');
+        divBiceps5.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${BicepsConcentrado.nombre}</h4>
+            <h4>${BicepsConcentrado.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divBiceps5);
+});
 
 // EJERCICIOS TRICEPS
 
-let ejercicioTricep = true;
-    
-function grupoMuscularTriceps() {
-    if (miEntrenamiento === 'Tríceps'){
-        alert('Eligio el grupo muscular TRÍCEPS');
+const btnTriceps1 = document.querySelector('#btnTriceps1');
+const btnTriceps2 = document.querySelector('#btnTriceps2');
+const btnTriceps3 = document.querySelector('#btnTriceps3');
+const btnTriceps4 = document.querySelector('#btnTriceps4');
+const btnTriceps5 = document.querySelector('#btnTriceps5');
 
-        while (ejercicioTricep != 0) {
-            ejercicioTricep = parseInt(prompt('Coloque el número del ejercicio que realizo y cuando quiera finalizar escriba el número 0. \n 1) Tríceps en polea \n 2) Trasnuca \n 3) Patada de burro \n 4) Fondo de tríceps 21 \n 5) Tríceps toma invertida'));
-            
-            if (ejercicioTricep === 1) {
-                cargaDeEjercicios(EjerciciosRealizados, TricepsEnPolea);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + TricepsEnPolea.nombre);
-            }
-            else if (ejercicioTricep === 2) {
-                cargaDeEjercicios(EjerciciosRealizados, Trasnuca);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + Trasnuca.nombre);
-            }
-            else if (ejercicioTricep === 3) {
-                cargaDeEjercicios(EjerciciosRealizados, PatadaDeBurro);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + PatadaDeBurro.nombre);
-            }
-            else if (ejercicioTricep === 4) {
-                cargaDeEjercicios(EjerciciosRealizados, FondoDeTriceps);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + FondoDeTriceps.nombre);
-            }
-            else if (ejercicioTricep === 5) {
-                cargaDeEjercicios(EjerciciosRealizados, TricepsTomaInvertida);
-                alert('Usted eligió el siguiente ejercicio:' + ' ' + TricepsTomaInvertida.nombre);
-            }
-            else {
-                alert('Finalizó la carga de ejercicios de TRÍCEPS');
-            }
-        }
-    }
-}
+btnTriceps1.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, TricepsEnPolea);
 
-let ejerciciosTriceps = grupoMuscularTriceps();
-console.log(EjerciciosRealizados);
+        const divTriceps1= document.createElement('div');
+        divTriceps1.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${TricepsEnPolea.nombre}</h4>
+            <h4>${TricepsEnPolea.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divTriceps1);
+});
 
-// ITERACION PARA QUE EL USUARIO SEPA CUANTOS Y QUE EJERCICIOS ELIGIO 
+btnTriceps2.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, Trasnuca);
 
-for (const ejercicio of EjerciciosRealizados) {
-    let li = document.createElement('li');
-    li.innerHTML =`
-    <div class="cardsPresupuestos">
-    <p> Nombre de Ejercicio: ${ejercicio.nombre}</p>
-    <p> Grupo muscular: ${ejercicio.grupoMuscular}</p>
-    </div>`
-    ul.append(li);
-}
+        const divTriceps2= document.createElement('div');
+        divTriceps2.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${Trasnuca.nombre}</h4>
+            <h4>${Trasnuca.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divTriceps2);
+});
 
-// FILTRO PARA BUSCAR EL GRUPO MUSCULAR DE ALGUNOS DE LOS EJERCICIOS ELEGIDOS
+btnTriceps3.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, PatadaDeBurro);
 
-let busquedaEjercicioRealizado = prompt('Ingrese el nombre del ejercicio que realizo para saber a que grupo muscular pertenece');
+        const divTriceps3= document.createElement('div');
+        divTriceps3.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${PatadaDeBurro.nombre}</h4>
+            <h4>${PatadaDeBurro.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divTriceps3);
+});
 
-function buscarPorNombre(arr, ejercicio){
-    let encontrado = arr.find((el) => {
-        return el.nombre == ejercicio;
-    });
-    return encontrado;
-}
+btnTriceps4.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, FondoDeTriceps);
 
-const encontrado = buscarPorNombre(EjerciciosRealizados, busquedaEjercicioRealizado);
-alert('El ejercicio que selecciono ' + encontrado.nombre + ' pertenece al grupo muscular: ' + encontrado.grupoMuscular);
+        const divTriceps4= document.createElement('div');
+        divTriceps4.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${FondoDeTriceps.nombre}</h4>
+            <h4>${FondoDeTriceps.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divTriceps4);
+});
 
+btnTriceps5.addEventListener('click', () =>{
+    cargaDeEjercicios(EjerciciosRealizados, TricepsTomaInvertida);
+
+        const divTriceps5= document.createElement('div');
+        divTriceps5.innerHTML =`
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            <h4>${TricepsTomaInvertida.nombre}</h4>
+            <h4>${TricepsTomaInvertida.grupoMuscular}</h4>
+        </li>
+        </ul>
+        `
+        resultadoEjerciciosRealizados.append(divTriceps5);
+});
