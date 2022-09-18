@@ -48,7 +48,7 @@ AL<!DOCTYPE html>
                     </div>
 
                     <div>
-                        <button id="btnUsuario">Enviar</button>
+                        <button id="btnUsuario" class="btn btn-light">Enviar</button>
                     </div>
                 </form>
             </div>
@@ -82,7 +82,7 @@ AL<!DOCTYPE html>
                     </div>
 
                     <div>
-                        <button id="btnIMC">Calcular</button>
+                        <button id="btnIMC" class="btn btn-light">Calcular</button>
                     </div>
                 </form>
             </div>
@@ -170,29 +170,8 @@ AL<!DOCTYPE html>
                             <div class="cardsPresupuestos">
                                 <h2 class="subitulosPresupuestos">GRUPO MUSCULAR<span class="subitutloNiveles"> <br> PECTORALES </span></h2>
                             </div>
-                            <div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <h4>Press de pecho con barra</h4>
-                                        <button id="btnPectoral1">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Aperturas de pecho con mancuernas</h4>
-                                        <button id="btnPectoral2">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Flexiones de brazos</h4>
-                                        <button id="btnPectoral3">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Press de pecho en máquina</h4>
-                                        <button id="btnPectoral4">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Peck Deck</h4>
-                                        <button id="btnPectoral5">Elegir</button>
-                                    </li>
-                                    </ul>
+                            <div class="ejerciciosPectorales">
+                                
                             </div>
                         </div>
                     </div>
@@ -200,32 +179,10 @@ AL<!DOCTYPE html>
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="card shadow-lg">
                             <div class="cardsPresupuestos">
-                                <h2 class="subitulosPresupuestos">GRUPO MUSCULAR <span class="subitutloNiveles"> <br> ESPALDA </span></h2>
+                                <h2 class="subitulosPresupuestos">GRUPO MUSCULAR<span class="subitutloNiveles"> <br> ESPALDA </span></h2>
                             </div>
-                            <div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <h4>Tracción dorsal</h4>
-                                        <button id="btnEspalda1">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Remo bajo en máquina</h4>
-                                        <button id="btnEspalda2">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Serrucho</h4>
-                                        <button id="btnEspalda3">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Dorsalera dividida</h4>
-                                        <button id="btnEspalda4">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Remo alto en máquina</h4>
-                                        <button id="btnEspalda5">Elegir</button>
-                                    </li>
-                                </ul>
-
+                            <div class="ejerciciosEspalda">
+                                
                             </div>
                         </div>
                     </div>
@@ -233,31 +190,10 @@ AL<!DOCTYPE html>
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="card shadow-lg">
                             <div class="cardsPresupuestos">
-                                <h2 class="subitulosPresupuestos">GRUPO MUSCULAR <span class="subitutloNiveles"> <br> PIERNAS </span></h2>
+                                <h2 class="subitulosPresupuestos">GRUPO MUSCULAR<span class="subitutloNiveles"> <br> PIERNAS </span></h2>
                             </div>
-                            <div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <h4>Sillón de cuádriceps</h4>
-                                        <button id="btnPiernas1">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Camilla de isquiotibiales</h4>
-                                        <button id="btnPiernas2">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Gemelos</h4>
-                                        <button id="btnPiernas3">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Aductores</h4>
-                                        <button id="btnPiernas4">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Abeductores</h4>
-                                        <button id="btnPiernas5">Elegir</button>
-                                    </li>
-                                </ul>
+                            <div class="ejerciciosPiernas">
+                                
                             </div>
                         </div>
                     </div>
@@ -267,108 +203,44 @@ AL<!DOCTYPE html>
 
 <!-- GRUPO MUSCULARES HOMBROS / BICEPS / TRICEPS -->
 
-        <section>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <div class="card shadow-lg">
-                            <div class="cardsPresupuestos">
-                                <h2 class="subitulosPresupuestos">GRUPO MUSCULAR<span class="subitutloNiveles"> <br> HOMBROS </span></h2>
-                            </div>
-                            <div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <h4>Press de hombros</h4>
-                                        <button id="btnHombros1">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Press arnold</h4>
-                                        <button id="btnHombros2">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Vuelos frontales</h4>
-                                        <button id="btnHombros3">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Jalones al mentón</h4>
-                                        <button id="btnHombros4">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Vuelos laterales</h4>
-                                        <button id="btnHombros5">Elegir</button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-lg">
+                    <div class="cardsPresupuestos">
+                        <h2 class="subitulosPresupuestos">GRUPO MUSCULAR<span class="subitutloNiveles"> <br> HOMBROS </span></h2>
                     </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <div class="card shadow-lg">
-                            <div class="cardsPresupuestos">
-                                <h2 class="subitulosPresupuestos">GRUPO MUSCULAR <span class="subitutloNiveles"> <br> BÍCEPS </span></h2>
-                            </div>
-                            <div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <h4>Curl de bíceps</h4>
-                                        <button id="btnBiceps1">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Bíceps con barra</h4>
-                                        <button id="btnBiceps2">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Bíceps en polea baja</h4>
-                                        <button id="btnBiceps3">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Bíceps 21</h4>
-                                        <button id="btnBiceps4">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Bíceps concentrado</h4>
-                                        <button id="btnBiceps5">Elegir</button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <div class="card shadow-lg">
-                            <div class="cardsPresupuestos">
-                                <h2 class="subitulosPresupuestos">GRUPO MUSCULAR <span class="subitutloNiveles"> <br> TRÍCEPS </span></h2>
-                            </div>
-                            <div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <h4>Tríceps en polea</h4>
-                                        <button id="btnTriceps1">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Trasnuca</h4>
-                                        <button id="btnTriceps2">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Patada de burro</h4>
-                                        <button id="btnTriceps3">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Fondo de tríceps</h4>
-                                        <button id="btnTriceps4">Elegir</button>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <h4>Tríceps toma invertida</h4>
-                                        <button id="btnTriceps5">Elegir</button>
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </div>
+                    <div class="ejerciciosHombros">
+                        
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-lg">
+                    <div class="cardsPresupuestos">
+                        <h2 class="subitulosPresupuestos">GRUPO MUSCULAR<span class="subitutloNiveles"> <br> BÍCEPS </span></h2>
+                    </div>
+                    <div class="ejerciciosBiceps">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-lg">
+                    <div class="cardsPresupuestos">
+                        <h2 class="subitulosPresupuestos">GRUPO MUSCULAR<span class="subitutloNiveles"> <br> TRÍCEPS </span></h2>
+                    </div>
+                    <div class="ejerciciosTriceps">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- ARRAY DE EJERCICIOS SELECCIONADOS -->
 
@@ -414,7 +286,7 @@ AL<!DOCTYPE html>
                     </div>
 
                     <div>
-                        <button id="btnBuscador">Buscar</button>
+                        <button id="btnBuscador" class="btn btn-light">Buscar</button>
                     </div>
                 </form>
             </div>
