@@ -27,9 +27,15 @@ btnUsuario.addEventListener('click', (e)=>{
             `
             resultadoIngresoUsuario.append(divIngreso);
         }
+        localStorage.setItem('datosIngresoNombre', nombreIngresado);
+        localStorage.setItem('datosIngresoApellido', apellidoIngresado);
     }
     ingresoNombreYApellido();
 });
+
+let datosIngresoNombree = localStorage.getItem('datosIngresoNombre');
+let datosIngresoApellidoo = localStorage.getItem('datosIngresoApellido');
+
 
 // SIMULADOR DE INDICE DE MASA CORPORAL
 
@@ -106,7 +112,7 @@ btnIMC.addEventListener('click', (e)=>{
             const divClasificacionIMC = document.createElement('div');
             divClasificacionIMC.innerHTML =`
             <div class= "contenedorIngreso">
-            <h2>Bajo las indicaciones del IMC usted tiene: SOBREPESO GRADO 2</h2>
+            <h2>Bajo las indicaciones del IMC usted tiene: OBESIDAD</h2>
             </div>
             `
             clasificacionesIMC.append(divClasificacionIMC);
@@ -169,7 +175,7 @@ const resultadoEjerciciosRealizados = document.querySelector('.resultadoEjercici
 
 const listaDeEjerciciosPectorales = [
     {
-        nombre: 'Press de pecho cn barra',
+        nombre: 'Press de pecho con barra',
         grupoMuscular: 'Pectorales',
         id: '1',
     },
@@ -557,7 +563,7 @@ btnBuscador.addEventListener('click', (e)=>{
             const divBuscador1 = document.createElement('div');
             divBuscador1.innerHTML = `
             <div class= "contenedorIngreso">
-            <h2>Ingrese un ejercicio valido</h2>
+                <h2>Ingrese un ejercicio valido</h2>
             </div>
             `
             resultadoBuscador.append(divBuscador1);
@@ -574,7 +580,7 @@ btnBuscador.addEventListener('click', (e)=>{
             const divBuscador2 = document.createElement('div');
             divBuscador2.innerHTML = `
             <div class= "contenedorIngreso">
-            <h2>${encontrado.nombre} pertenece al grupo muscular ${encontrado.grupoMuscular}</h2>
+                <h2>${encontrado.nombre} pertenece al grupo muscular ${encontrado.grupoMuscular}</h2>
             </div>
             `
             resultadoBuscador.append(divBuscador2);
