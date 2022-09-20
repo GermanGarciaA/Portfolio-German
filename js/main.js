@@ -4,6 +4,7 @@ const btnUsuario = document.querySelector('#btnUsuario');
 const resultadoIngresoUsuario = document.querySelector('.resultadoIngresoUsuario');
 
 btnUsuario.addEventListener('click', (e)=>{
+    resultadoIngresoUsuario.innerHTML = ''; 
     e.preventDefault();
     const nombreIngresado = document.querySelector('#nombre').value;
     const apellidoIngresado = document.querySelector('#apellido').value;
@@ -46,6 +47,8 @@ const clasificacionesIMC = document.querySelector('.clasificacionesIMC');
 let imc = 0;
 
 btnIMC.addEventListener('click', (e)=>{
+    resultadoIMC.innerHTML = '';
+    clasificacionesIMC.innerHTML = '';
     e.preventDefault();
     const pesoIngresado = document.querySelector('#peso').value;
     const alturaIngresada = document.querySelector('#altura').value;
@@ -562,6 +565,7 @@ const btnBuscador = document.querySelector('#btnBuscador');
 const resultadoBuscador = document.querySelector('.resultadoBuscador');
 
 btnBuscador.addEventListener('click', (e)=>{
+    resultadoBuscador.innerHTML = '';
     e.preventDefault();
     const ejercicioIngresado = document.querySelector('#buscador').value;
 
