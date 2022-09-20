@@ -205,12 +205,13 @@ const ejerciciosPectoralesDiv = document.querySelector('.ejerciciosPectorales');
 
 function crearEjerciciosPectorales(){
     listaDeEjerciciosPectorales.forEach(element=>{
+        let {nombre, id} = element;
         const divPectorales = document.createElement('div');
         divPectorales.innerHTML +=`
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <h4>${element.nombre}</h4>
-                    <button id="btnPectorales${element.id}" class="btn btn-outline-dark">Elegir</button>
+                    <h4>${nombre}</h4>
+                    <button id="btnPectorales${id}" class="btn btn-outline-dark">Elegir</button>
                 </li>
             </ul>
         `
@@ -261,12 +262,13 @@ const ejerciciosEspaldaDiv = document.querySelector('.ejerciciosEspalda');
 
 function crearEjerciciosEspalda(){
     listaDeEjerciciosEspalda.forEach(element=>{
+        let {nombre, id} = element;
         const divEspalda = document.createElement('div');
         divEspalda.innerHTML +=`
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <h4>${element.nombre}</h4>
-                    <button id="btnEspalda${element.id}" class="btn btn-outline-dark">Elegir</button>
+                    <h4>${nombre}</h4>
+                    <button id="btnEspalda${id}" class="btn btn-outline-dark">Elegir</button>
                 </li>
             </ul>
         `
@@ -317,12 +319,13 @@ const ejerciciosPiernasDiv = document.querySelector('.ejerciciosPiernas');
 
 function crearEjerciciosPiernas(){
     listaDeEjerciciosPiernas.forEach(element=>{
+        let {nombre, id} = element;
         const divPiernas = document.createElement('div');
         divPiernas.innerHTML +=`
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <h4>${element.nombre}</h4>
-                    <button id="btnPiernas${element.id}" class="btn btn-outline-dark">Elegir</button>
+                    <h4>${nombre}</h4>
+                    <button id="btnPiernas${id}" class="btn btn-outline-dark">Elegir</button>
                 </li>
             </ul>
         `
@@ -373,12 +376,13 @@ const ejerciciosHombrosDiv = document.querySelector('.ejerciciosHombros');
 
 function crearEjerciciosHombros(){
     listaDeEjerciciosHombros.forEach(element=>{
+        let {nombre, id} = element;
         const divHombros = document.createElement('div');
         divHombros.innerHTML +=`
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <h4>${element.nombre}</h4>
-                    <button id="btnHombros${element.id}" class="btn btn-outline-dark">Elegir</button>
+                    <h4>${nombre}</h4>
+                    <button id="btnHombros${id}" class="btn btn-outline-dark">Elegir</button>
                 </li>
             </ul>
         `
@@ -429,12 +433,13 @@ const ejerciciosBicepsDiv = document.querySelector('.ejerciciosBiceps');
 
 function crearEjerciciosBiceps(){
     listaDeEjerciciosBiceps.forEach(element=>{
+        let {nombre, id} = element;
         const divBiceps = document.createElement('div');
         divBiceps.innerHTML +=`
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <h4>${element.nombre}</h4>
-                    <button id="btnBiceps${element.id}" class="btn btn-outline-dark">Elegir</button>
+                    <h4>${nombre}</h4>
+                    <button id="btnBiceps${id}" class="btn btn-outline-dark">Elegir</button>
                 </li>
             </ul>
         `
@@ -485,12 +490,13 @@ const ejerciciosTricepsDiv = document.querySelector('.ejerciciosTriceps');
 
 function crearEjerciciosTriceps(){
     listaDeEjerciciosTriceps.forEach(element=>{
+        let {nombre, id} = element;
         const divTriceps = document.createElement('div');
         divTriceps.innerHTML +=`
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <h4>${element.nombre}</h4>
-                    <button id="btnTriceps${element.id}" class="btn btn-outline-dark">Elegir</button>
+                    <h4>${nombre}</h4>
+                    <button id="btnTriceps${id}" class="btn btn-outline-dark">Elegir</button>
                 </li>
             </ul>
         `
@@ -515,12 +521,13 @@ function ejerciciosRealizados(ejercicio) {
 function mostrarEjercicios() {
     resultadoEjerciciosRealizados.innerHTML = '';
     listaDeEjerciciosRealizados.forEach(ejercicios=>{
+        let {nombre, grupoMuscular} = ejercicios;
         const divEjerciciosRealizados = document.createElement('div');
         divEjerciciosRealizados.innerHTML +=`
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    <h4>${ejercicios.nombre}</h4>
-                    <h4>${ejercicios.grupoMuscular}</h4>
+                    <h4>${nombre}</h4>
+                    <h4>${grupoMuscular}</h4>
                 </li>
                 <button id="btnBorrar${ejercicios.id}" class="btn btn-outline-secondary">Borrar</button>
             </ul>
