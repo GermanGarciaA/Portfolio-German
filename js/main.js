@@ -11,22 +11,18 @@ btnUsuario.addEventListener('click', (e)=>{
 
     const ingresoNombreYApellido = () =>{
         if ((nombreIngresado === '' || (!isNaN(nombreIngresado || apellidoIngresado))) || apellidoIngresado === '') {
-            const divIngreso = document.createElement('div');
-            divIngreso.innerHTML = `
-            <div class= "contenedorIngreso">
-            <h2>Ingrese correctamente su nombre y apellido</h2>
-            </div>
-            `
-            resultadoIngresoUsuario.append(divIngreso);
+            Swal.fire({
+                icon: 'error',
+                title: 'USUARIO INCORRECTO',
+                text: 'Ingrese correctamente su nombre y apellido',
+            })
         }
         else {
-            const divIngreso = document.createElement('div');
-            divIngreso.innerHTML = `
-            <div class= "contenedorIngreso">
-            <h2>${nombreIngresado} ${apellidoIngresado} ha ingresado correctamente</h2>
-            </div>
-            `
-            resultadoIngresoUsuario.append(divIngreso);
+            Swal.fire({
+                icon: 'success',
+                title: '¡Bienvenido/a' + ' ' + nombreIngresado + ' ' + apellidoIngresado + '!',
+                text: 'A continuación podrás calcular tu IMC y registrar tu sesión de entrenamiento',
+            })
         }
         localStorage.setItem('datosIngresoNombre', nombreIngresado);
         localStorage.setItem('datosIngresoApellido', apellidoIngresado);
@@ -35,8 +31,7 @@ btnUsuario.addEventListener('click', (e)=>{
 });
 
 let datosIngresoNombree = localStorage.getItem('datosIngresoNombre');
-let datosIngresoApellidoo = localStorage.getItem('datosIngresoApellido');
-
+let datosIngresoApellido = localStorage.getItem('datosIngresoApellido');
 
 // SIMULADOR DE INDICE DE MASA CORPORAL
 
@@ -55,115 +50,85 @@ btnIMC.addEventListener('click', (e)=>{
 
     const ingresoPesoYAltura = () =>{
         imc = pesoIngresado / (alturaIngresada*alturaIngresada);
-        const divIMC = document.createElement('div');
-            divIMC.innerHTML = `
-            <div class= "contenedorIngreso">
-            <h2>Su IMC es de ${Math.round(imc)}</h2>
-            </div>
-            `
-            resultadoIMC.append(divIMC);
     }
-    ingresoPesoYAltura();
+
+ingresoPesoYAltura();
 
     const clasificacionIMC = () =>{
         if (imc < 16) {
-            const divClasificacionIMC = document.createElement('div');
-            divClasificacionIMC.innerHTML =`
-            <div class= "contenedorIngreso">
-            <h2>Bajo las indicaciones del IMC usted tiene: DELGADEZ SEVERA</h2>
-            </div>
-            `
-            clasificacionesIMC.append(divClasificacionIMC);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Su IMC es de' + ' ' + Math.round(imc),
+                text: 'Bajo las indicaciones del IMC usted tiene: DELGADEZ SEVERA',
+            })
         }
         else if(imc == 16 || imc < 16.99){
-            const divClasificacionIMC = document.createElement('div');
-            divClasificacionIMC.innerHTML =`
-            <div class= "contenedorIngreso">
-            <h2>Bajo las indicaciones del IMC usted tiene: DELGADEZ MODERADA</h2>
-            </div>
-            `
-            clasificacionesIMC.append(divClasificacionIMC);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Bajo las indicaciones del IMC usted tiene: DELGADEZ MODERADA',
+            })
         }
         else if(imc == 17 || imc < 18.49){
-            const divClasificacionIMC = document.createElement('div');
-            divClasificacionIMC.innerHTML =`
-            <div class= "contenedorIngreso">
-            <h2>Bajo las indicaciones del IMC usted tiene: DELGADEZ ACEPTABLE</h2>
-            </div>
-            `
-            clasificacionesIMC.append(divClasificacionIMC);
+            Swal.fire({
+                icon: 'success',
+                title: 'Su IMC es de' + ' ' + Math.round(imc),
+                text: 'Bajo las indicaciones del IMC usted tiene: DELGADEZ ACEPTABLE',
+            })
         }
         else if(imc == 18.5 || imc < 24.99){
-            const divClasificacionIMC = document.createElement('div');
-            divClasificacionIMC.innerHTML =`
-            <div class= "contenedorIngreso">
-            <h2>Bajo las indicaciones del IMC usted tiene: NORMOPESO</h2>
-            </div>
-            `
-            clasificacionesIMC.append(divClasificacionIMC);
+            Swal.fire({
+                icon: 'success',
+                title: 'Su IMC es de' + ' ' + Math.round(imc),
+                text: 'Bajo las indicaciones del IMC usted tiene: NORMOPESO',
+            })
         }
         else if(imc == 25 || imc < 26.99){
-            const divClasificacionIMC = document.createElement('div');
-            divClasificacionIMC.innerHTML =`
-            <div class= "contenedorIngreso">
-            <h2>Bajo las indicaciones del IMC usted tiene: SOBREPESO GRADO 1</h2>
-            </div>
-            `
-            clasificacionesIMC.append(divClasificacionIMC);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Su IMC es de' + ' ' + Math.round(imc),
+                text: 'Bajo las indicaciones del IMC usted tiene: SOBREPESO GRADO 1',
+            })
         }
         else if(imc == 27 || imc < 29.99){
-            const divClasificacionIMC = document.createElement('div');
-            divClasificacionIMC.innerHTML =`
-            <div class= "contenedorIngreso">
-            <h2>Bajo las indicaciones del IMC usted tiene: OBESIDAD</h2>
-            </div>
-            `
-            clasificacionesIMC.append(divClasificacionIMC);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Su IMC es de' + ' ' + Math.round(imc),
+                text: 'Bajo las indicaciones del IMC usted tiene: OBESIDAD',
+            })
         }
         else if(imc == 30 || imc < 34.99){
-            const divClasificacionIMC = document.createElement('div');
-            divClasificacionIMC.innerHTML =`
-            <div class= "contenedorIngreso">
-            <h2>Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 1</h2>
-            </div>
-            `
-            clasificacionesIMC.append(divClasificacionIMC);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Su IMC es de' + ' ' + Math.round(imc),
+                text: 'Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 1',
+            })
         }
         else if(imc == 35 || imc < 39.99){
-            const divClasificacionIMC = document.createElement('div');
-            divClasificacionIMC.innerHTML =`
-            <div class= "contenedorIngreso">
-            <h2>Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 2</h2>
-            </div>
-            `
-            clasificacionesIMC.append(divClasificacionIMC);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Su IMC es de' + ' ' + Math.round(imc),
+                text: 'Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 2',
+            })
         }
         else if(imc == 40 || imc < 49.99){
-            const divClasificacionIMC = document.createElement('div');
-            divClasificacionIMC.innerHTML =`
-            <div class= "contenedorIngreso">
-            <h2>Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 3 (MORBIDA)</h2>
-            </div>
-            `
-            clasificacionesIMC.append(divClasificacionIMC);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Su IMC es de' + ' ' + Math.round(imc),
+                text: 'Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 3 (MORBIDA)',
+            })
         }
         else if(imc > 50){
-            const divClasificacionIMC = document.createElement('div');
-            divClasificacionIMC.innerHTML =`
-            <div class= "contenedorIngreso">
-            <h2>Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 4 (EXTREMA)</h2>
-            </div>
-            `
-            clasificacionesIMC.append(divClasificacionIMC);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Su IMC es de' + ' ' + Math.round(imc),
+                text: 'Bajo las indicaciones del IMC usted tiene: OBESIDAD TIPO 4 (EXTREMA)',
+            })
         }
         else{
-            const divClasificacionIMC = document.createElement('div');
-            divClasificacionIMC.innerHTML =`
-            <div class= "contenedorIngreso">
-            <h2>Los valores no corresponden a la tabla de IMC</h2>
-            </div>
-            `
-            clasificacionesIMC.append(divClasificacionIMC);
+            Swal.fire({
+                icon: 'error',
+                title: 'Los valores no corresponden a la tabla de IMC',
+            })
         }
     }
     clasificacionIMC();
@@ -524,7 +489,7 @@ function ejerciciosRealizados(ejercicio) {
 function mostrarEjercicios() {
     resultadoEjerciciosRealizados.innerHTML = '';
     listaDeEjerciciosRealizados.forEach(ejercicios=>{
-        let {nombre, grupoMuscular} = ejercicios;
+        let {nombre, grupoMuscular, id} = ejercicios;
         const divEjerciciosRealizados = document.createElement('div');
         divEjerciciosRealizados.innerHTML +=`
             <ul class="list-group list-group-flush">
@@ -532,7 +497,7 @@ function mostrarEjercicios() {
                     <h4>${nombre}</h4>
                     <h4>${grupoMuscular}</h4>
                 </li>
-                <button id="btnBorrar${ejercicios.id}" class="btn btn-outline-secondary">Borrar</button>
+                <button id="btnBorrar${id}" class="btn btn-outline-secondary">Borrar</button>
             </ul>
         `
         resultadoEjerciciosRealizados.append(divEjerciciosRealizados);
@@ -571,13 +536,7 @@ btnBuscador.addEventListener('click', (e)=>{
 
     const buscadorDeEjercicios = () =>{
         if ((ejercicioIngresado === '' || (!isNaN(ejercicioIngresado)))) {
-            const divBuscador1 = document.createElement('div');
-            divBuscador1.innerHTML = `
-            <div class= "contenedorIngreso">
-                <h2>Ingrese un ejercicio valido</h2>
-            </div>
-            `
-            resultadoBuscador.append(divBuscador1);
+            Swal.fire('Ingrese un ejercicio valido');
         }
         else {
             function buscarPorNombre(arr, ejercicio){
@@ -588,13 +547,7 @@ btnBuscador.addEventListener('click', (e)=>{
             }
             const encontrado = buscarPorNombre(listaDeEjerciciosRealizados, ejercicioIngresado);
 
-            const divBuscador2 = document.createElement('div');
-            divBuscador2.innerHTML = `
-            <div class= "contenedorIngreso">
-                <h2>${encontrado.nombre} pertenece al grupo muscular ${encontrado.grupoMuscular}</h2>
-            </div>
-            `
-            resultadoBuscador.append(divBuscador2);
+            Swal.fire(encontrado.nombre + ' ' + 'pertenece al grupo muscular' + ' ' + encontrado.grupoMuscular);
         }
     }
     buscadorDeEjercicios();
