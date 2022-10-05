@@ -1,0 +1,27 @@
+[
+    {
+        "nombre":"Tracción dorsal",
+        "grupoMuscular":"Espalda",
+        "id":"6"
+    },
+    {
+        "nombre":"Remo bajo en máquina",
+        "grupoMuscular":"Espalda",
+        "id":"7"
+    },
+    {
+        "nombre":"Serrucho",
+        "grupoMuscular":"Espalda",
+        "id":"8"
+    },
+    {
+        "nombre":"Dorsalera dividida",
+        "grupoMuscular":"Espalda",
+        "id":"9"
+    },
+    {
+        "nombre":"Remo alto en máquina",
+        "grupoMuscular":"Espalda",
+        "id":"10"
+    }
+]

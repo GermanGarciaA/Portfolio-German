@@ -1,0 +1,28 @@
+[
+    {
+        "nombre":"Press de pecho con barra",
+        "grupoMuscular":"Pectorales",
+        "id":"1"
+    },
+    {
+        "nombre":"Aperturas de pecho con mancuernas",
+        "grupoMuscular":"Pectorales",
+        "id":"2"
+    },
+    {
+        "nombre":"Flexiones de brazos",
+        "grupoMuscular":"Pectorales",
+        "id":"3"
+    },
+    {
+        "nombre":"Press de pecho en máquina",
+        "grupoMuscular":"Pectorales",
+        "id":"4"
+    },
+    {
+        "nombre":"Peck Deck",
+        "grupoMuscular":"Pectorales",
+        "id":"5"
+    }
+]
+

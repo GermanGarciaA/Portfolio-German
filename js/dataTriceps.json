@@ -1,0 +1,27 @@
+[
+    {
+        "nombre":"Tríceps en polea",
+        "grupoMuscular":"Tríceps",
+        "id":"26"
+    },
+    {
+        "nombre":"Trasnuca",
+        "grupoMuscular":"Tríceps",
+        "id":"27"
+    },
+    {
+        "nombre":"Patada de burro",
+        "grupoMuscular":"Tríceps",
+        "id":"28"
+    },
+    {
+        "nombre":"Fondo de tríceps",
+        "grupoMuscular":"Tríceps",
+        "id":"29"
+    },
+    {
+        "nombre":"Tríceps toma invertida",
+        "grupoMuscular":"Tríceps",
+        "id":"30"
+    }
+]

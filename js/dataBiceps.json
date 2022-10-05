@@ -1,0 +1,27 @@
+[
+    {
+        "nombre":"Curl de bíceps",
+        "grupoMuscular":"Bíceps",
+        "id":"21"
+    },
+    {
+        "nombre":"Bíceps con barra",
+        "grupoMuscular":"Bíceps",
+        "id":"22"
+    },
+    {
+        "nombre":"Bíceps en polea baja",
+        "grupoMuscular":"Bíceps",
+        "id":"23"
+    },
+    {
+        "nombre":"Bíceps 21",
+        "grupoMuscular":"Bíceps",
+        "id":"24"
+    },
+    {
+        "nombre":"Bíceps concentrado",
+        "grupoMuscular":"Bíceps",
+        "id":"25"
+    }
+]

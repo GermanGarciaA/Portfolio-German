@@ -1,0 +1,27 @@
+[
+    {
+        "nombre":"Sillón de cuádriceps",
+        "grupoMuscular":"Piernas",
+        "id":"11"
+    },
+    {
+        "nombre":"Camilla de isquiotibiales",
+        "grupoMuscular":"Piernas",
+        "id":"12"
+    },
+    {
+        "nombre":"Gemelos",
+        "grupoMuscular":"Piernas",
+        "id":"13"
+    },
+    {
+        "nombre":"Aductores",
+        "grupoMuscular":"Piernas",
+        "id":"14"
+    },
+    {
+        "nombre":"Aductores",
+        "grupoMuscular":"Piernas",
+        "id":"15"
+    }
+]

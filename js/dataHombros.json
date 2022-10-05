@@ -1,0 +1,27 @@
+[
+    {
+        "nombre":"Press de hombros",
+        "grupoMuscular":"Hombros",
+        "id":"16"
+    },
+    {
+        "nombre":"Press arnold",
+        "grupoMuscular":"Hombros",
+        "id":"17"
+    },
+    {
+        "nombre":"Vuelos frontales",
+        "grupoMuscular":"Hombros",
+        "id":"18"
+    },
+    {
+        "nombre":"Jalones al mentón",
+        "grupoMuscular":"Hombros",
+        "id":"19"
+    },
+    {
+        "nombre":"Vuelos laterales",
+        "grupoMuscular":"Hombros",
+        "id":"20"
+    }
+]

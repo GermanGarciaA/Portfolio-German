@@ -141,33 +141,19 @@ const resultadoEjerciciosRealizados = document.querySelector('.resultadoEjercici
 
 // GRUPO MUSCULAR PECTORALES
 
-const listaDeEjerciciosPectorales = [
-    {
-        nombre: 'Press de pecho con barra',
-        grupoMuscular: 'Pectorales',
-        id: '1',
-    },
-    {
-        nombre: 'Aperturas de pecho con mancuernas',
-        grupoMuscular: 'Pectorales',
-        id: '2',
-    },
-    {
-        nombre: 'Flexiones de brazos',
-        grupoMuscular: 'Pectorales',
-        id: '3',
-    },
-    {
-        nombre: 'Press de pecho en máquina',
-        grupoMuscular: 'Pectorales',
-        id: '4',
-    },
-    {
-        nombre: 'Peck Deck',
-        grupoMuscular: 'Pectorales',
-        id: '5',
-    },
-];
+const listaDeEjerciciosPectorales = [];
+
+const grupoMuscularPectorales = async () =>{
+    const response = await fetch('./js/dataPectorales.json');
+
+    const data = await response.json();
+    data.forEach(element =>{
+        listaDeEjerciciosPectorales.push(element);
+    })
+    crearEjerciciosPectorales(data)
+}
+
+grupoMuscularPectorales();
 
 const ejerciciosPectoralesDiv = document.querySelector('.ejerciciosPectorales');
 
@@ -198,33 +184,19 @@ function botonPectorales(){
 
 // GRUPO MUSCULAR ESPALDA
 
-const listaDeEjerciciosEspalda = [
-    {
-        nombre: 'Tracción dorsal',
-        grupoMuscular: 'Espalda',
-        id: '6',
-    },
-    {
-        nombre: 'Remo bajo en máquina',
-        grupoMuscular: 'Espalda',
-        id: '7',
-    },
-    {
-        nombre: 'Serrucho',
-        grupoMuscular: 'Espalda',
-        id: '8',
-    },
-    {
-        nombre: 'Dorsalera dividida',
-        grupoMuscular: 'Espalda',
-        id: '9',
-    },
-    {
-        nombre: 'Remo alto en máquina',
-        grupoMuscular: 'Espalda',
-        id: '10',
-    },
-];
+const listaDeEjerciciosEspalda = [];
+
+const grupoMuscularEspalda = async () =>{
+    const response = await fetch('./js/dataEspalda.json');
+
+    const data = await response.json();
+    data.forEach(element =>{
+        listaDeEjerciciosEspalda.push(element);
+    })
+    crearEjerciciosEspalda(data)
+}
+
+grupoMuscularEspalda();
 
 const ejerciciosEspaldaDiv = document.querySelector('.ejerciciosEspalda');
 
@@ -255,33 +227,19 @@ function botonEspalda(){
 
 // GRUPO MUSCULAR PIERNAS
 
-const listaDeEjerciciosPiernas = [
-    {
-        nombre: 'Sillón de cuádriceps',
-        grupoMuscular: 'Piernas',
-        id: '11',
-    },
-    {
-        nombre: 'Camilla de isquiotibiales',
-        grupoMuscular: 'Piernas',
-        id: '12',
-    },
-    {
-        nombre: 'Gemelos',
-        grupoMuscular: 'Piernas',
-        id: '13',
-    },
-    {
-        nombre: 'Aductores',
-        grupoMuscular: 'Piernas',
-        id: '14',
-    },
-    {
-        nombre: 'Aductores',
-        grupoMuscular: 'Piernas',
-        id: '15',
-    },
-];
+const listaDeEjerciciosPiernas = [];
+
+const grupoMuscularPiernas = async () =>{
+    const response = await fetch('./js/dataPiernas.json');
+
+    const data = await response.json();
+    data.forEach(element =>{
+        listaDeEjerciciosPiernas.push(element);
+    })
+    crearEjerciciosPiernas(data)
+}
+
+grupoMuscularPiernas();
 
 const ejerciciosPiernasDiv = document.querySelector('.ejerciciosPiernas');
 
@@ -312,33 +270,19 @@ function botonPiernas(){
 
 // GRUPO MUSCULAR HOMBROS
 
-const listaDeEjerciciosHombros = [
-    {
-        nombre: 'Press de hombros',
-        grupoMuscular: 'Hombros',
-        id: '16',
-    },
-    {
-        nombre: 'Press arnold',
-        grupoMuscular: 'Hombros',
-        id: '17',
-    },
-    {
-        nombre: 'Vuelos frontales',
-        grupoMuscular: 'Hombros',
-        id: '18',
-    },
-    {
-        nombre: 'Jalones al mentón',
-        grupoMuscular: 'Hombros',
-        id: '19',
-    },
-    {
-        nombre: 'Vuelos laterales',
-        grupoMuscular: 'Hombros',
-        id: '20',
-    },
-];
+const listaDeEjerciciosHombros = [];
+
+const grupoMuscularHombros = async () =>{
+    const response = await fetch('./js/dataHombros.json');
+
+    const data = await response.json();
+    data.forEach(element =>{
+        listaDeEjerciciosHombros.push(element);
+    })
+    crearEjerciciosHombros(data)
+}
+
+grupoMuscularHombros();
 
 const ejerciciosHombrosDiv = document.querySelector('.ejerciciosHombros');
 
@@ -369,33 +313,19 @@ function botonHombros(){
 
 // GRUPO MUSCULAR BICEPS
 
-const listaDeEjerciciosBiceps = [
-    {
-        nombre: 'Curl de bíceps',
-        grupoMuscular: 'Bíceps',
-        id: '21',
-    },
-    {
-        nombre: 'Bíceps con barra',
-        grupoMuscular: 'Bíceps',
-        id: '22',
-    },
-    {
-        nombre: 'Bíceps en polea baja',
-        grupoMuscular: 'Bíceps',
-        id: '23',
-    },
-    {
-        nombre: 'Bíceps 21',
-        grupoMuscular: 'Bíceps',
-        id: '24',
-    },
-    {
-        nombre: 'Bíceps concentrado',
-        grupoMuscular: 'Bíceps',
-        id: '25',
-    },
-];
+const listaDeEjerciciosBiceps = [];
+
+const grupoMuscularBiceps = async () =>{
+    const response = await fetch('./js/dataBiceps.json');
+
+    const data = await response.json();
+    data.forEach(element =>{
+        listaDeEjerciciosBiceps.push(element);
+    })
+    crearEjerciciosBiceps(data)
+}
+
+grupoMuscularBiceps();
 
 const ejerciciosBicepsDiv = document.querySelector('.ejerciciosBiceps');
 
@@ -426,33 +356,19 @@ function botonBiceps(){
 
 // GRUPO MUSCULAR TRICEPS
 
-const listaDeEjerciciosTriceps = [
-    {
-        nombre: 'Tríceps en polea',
-        grupoMuscular: 'Tríceps',
-        id: '26',
-    },
-    {
-        nombre: 'Trasnuca',
-        grupoMuscular: 'Tríceps',
-        id: '27',
-    },
-    {
-        nombre: 'Patada de burro',
-        grupoMuscular: 'Tríceps',
-        id: '28',
-    },
-    {
-        nombre: 'Fondo de tríceps',
-        grupoMuscular: 'Tríceps',
-        id: '29',
-    },
-    {
-        nombre: 'Tríceps toma invertida',
-        grupoMuscular: 'Tríceps',
-        id: '30',
-    },
-];
+const listaDeEjerciciosTriceps = [];
+
+const grupoMuscularTriceps = async () =>{
+    const response = await fetch('./js/dataTriceps.json');
+
+    const data = await response.json();
+    data.forEach(element =>{
+        listaDeEjerciciosTriceps.push(element);
+    })
+    crearEjerciciosTriceps(data)
+}
+
+grupoMuscularTriceps();
 
 const ejerciciosTricepsDiv = document.querySelector('.ejerciciosTriceps');
 
